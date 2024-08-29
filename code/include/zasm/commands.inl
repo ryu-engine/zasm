@@ -23,7 +23,7 @@ constexpr std::int32_t parameters_count(const command_type cmd) noexcept {
 }
 
 constexpr std::string_view to_string(const command_type cmd) noexcept {
-	if (is_parameters_count<0>()) {
+	if (is_parameters_count<0>(cmd)) {
 		switch (cmd) {
 			case interrupt:   return "int";
 			case call_return: return "ret";
@@ -147,7 +147,7 @@ constexpr command_type from_string(const std::string_view cmd) noexcept {
 		case 's':
 			if (cmd[1] == 'u' & cmd[2] == 'b') return substract;
 			if (cmd[1] == 'u' & cmd[2] == 'm') return sum;
-			if (cmd[1] == 'f' & cmd[2] == 't') return bit_shift;
+			if (cmd[1] == 'f' & cmd[2] == 't') return bin_shift;
 			break;
 
 		default: break;
@@ -347,5 +347,7 @@ constexpr std::string_view description(const command_type cmd) noexcept {
 			"Rotate the bits of the value under the given address to the bits count, which is in literal.\n"
 			"Positive literal shift bits to the left, and negative otherwise."
 			;
+		default: break;
 	}
+	return {};
 }
