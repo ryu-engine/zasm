@@ -145,7 +145,7 @@ constexpr command_type from_string(const std::string_view cmd) noexcept {
 			if (cmd[1] == '0' & cmd[2] == 't') return bin_rotate;
 			break;
 		case 's':
-			if (cmd[1] == 'u' & cmd[2] == 'b') return substract;
+			if (cmd[1] == 'u' & cmd[2] == 'b') return subtract;
 			if (cmd[1] == 'u' & cmd[2] == 'm') return sum;
 			if (cmd[1] == 'f' & cmd[2] == 't') return bin_shift;
 			break;
