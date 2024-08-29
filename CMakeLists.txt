@@ -11,7 +11,10 @@ project(zasm
 include(${zasm_root}/cmake/prelude.cmake)
 
 file(GLOB_RECURSE zasm_headers CONFIGURE_DEPENDS ${zasm_root}/code/include/*.h)
-add_library(${PROJECT_NAME} INTERFACE  ${zasm_headers})
+
+add_library(${PROJECT_NAME} INTERFACE ${zasm_headers})
+add_library(${PROJECT_NAMESPACE}::assembly ALIAS ${PROJECT_NAME})
+# Should be zen::assembly
 
 target_include_directories(${PROJECT_NAME} INTERFACE
 	${zasm_root}/code/include

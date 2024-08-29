@@ -47,6 +47,8 @@ set_standards(
 
 #========================================== DEFINITIONS ===========================================#
 
+set(PROJECT_NAMESPACE zen)
+
 string(TOUPPER ${zasm_platform} _platform)
 add_compile_definitions(
 	ZASM_${_platform}                        # ZASM_WINDOWS, ZASM_LINUX, etc.
