@@ -27,16 +27,10 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 	VISIBILITY_INLINES_HIDDEN 1
 )
 
-set(zasm_export_header include/${PROJECT_NAME}/export.h)
-generate_export_header(${PROJECT_NAME}
-	EXPORT_FILE_NAME ${zasm_export_header}
-)
-
 install(TARGETS ${PROJECT_NAME} DESTINATION ${zasm_out}/$<IF:$<CONFIG:Debug>,debug,release>/lib/)
 install(
 	FILES
 		${zasm_headers}
-		${PROJECT_BINARY_DIR}/${zasm_export_header}
 	DESTINATION
 		${zasm_out}/$<IF:$<CONFIG:Debug>,debug,release>/include
 )
