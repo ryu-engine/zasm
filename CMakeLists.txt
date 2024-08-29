@@ -11,14 +11,9 @@ project(zasm
 include(${zasm_root}/cmake/prelude.cmake)
 
 file(GLOB_RECURSE zasm_headers CONFIGURE_DEPENDS ${zasm_root}/code/include/*.h)
-file(GLOB_RECURSE zasm_sources CONFIGURE_DEPENDS ${zasm_root}/code/sources/*.cpp)
-add_library(${PROJECT_NAME} ${zasm_headers} ${zasm_sources})
+add_library(${PROJECT_NAME} INTERFACE  ${zasm_headers})
 
-add_subdirectory(${zasm_root}/deps)
-
-target_link_libraries(${PROJECT_NAME} PUBLIC zasm::deps)
-
-target_include_directories(${PROJECT_NAME} PUBLIC
+target_include_directories(${PROJECT_NAME} INTERFACE
 	${zasm_root}/code/include
 	${PROJECT_BINARY_DIR}/include
 )

@@ -1,9 +1,4 @@
 #pragma once
 
-#include "zasm/export.h"
+#include "zasm/commands.h"
 
-namespace zasm {
-
-
-
-}  // namespace zasm

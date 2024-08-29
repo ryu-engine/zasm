@@ -1,6 +1,8 @@
 #pragma once
 
 #include <string_view>
+
+#include "zasm/export.h"
 #include "zasm/config.h"
 
 namespace zasm::commands {
