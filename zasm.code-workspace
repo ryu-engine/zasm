@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{ "path": "." }
+	],
+	"settings": {
+		"C_Cpp.formatting": "default",
+		"C_Cpp.clang_format_path": ".clang-format",
+		"editor.defaultFormatter": "eclipse-cdt.vscode-clangd-cdtcloud",
+		"editor.formatOnSave": false,
+		"editor.formatOnType": false,
+		"editor.formatOnPaste": true,
+		"editor.formatOnSaveMode": "modificationsIfAvailable",
+
+		// Extension: shardulm94.trailing-spaces
+		"trailing-spaces.trimOnSave": false,
+		"trailing-spaces.deleteModifiedLinesOnly": true,
+
+		// Extension: ms-vscode.cmake-tools
+		"cmake.configureOnOpen": false,
+		"cmake.skipConfigureIfCachePresent": false,
+		"cmake.parallelJobs": 16,
+		"cSpell.words": [
+			"uset"
+		]
+	}
+}
